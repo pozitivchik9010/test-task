@@ -1,0 +1,245 @@
+@use "../abstracts/functions" as *;
+@use "../abstracts/variables" as *;
+
+.header {
+  background-color: $color-white;
+  padding: $size-xs $size-s;
+  height:  $size-xl;
+  position: sticky;
+  top: 0;
+
+  font-size: $size-s;
+  font-weight: 500;
+}
+
+.header__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: $size-xxs;
+
+  &-img {
+    width: $size-l;
+    height: $size-l;
+  }
+
+  &-text {
+    width: 68px;
+    height: $size-s;
+  }
+}
+
+.nav {
+  max-height: 0;
+  transition: all 0.5s ease;
+
+  background-color: rgb(255, 255, 255);
+  top: 40px;
+  width: 100vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  padding: 0 $size-s;
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: $size-s;
+  }
+
+  &__link, .dropdawn__item a {
+    color: #3235e7;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+.menu-nav {
+  display: grid;
+  justify-items: end;
+  gap: $column;
+}
+
+.menu-nav span {
+  display: block;
+  width: 32px;
+  height: 2px;
+  border-radius: $radius-L;
+  background-color: $color-primary;
+  margin-bottom: 0;
+  transition: all 0.2s ease;
+
+  &:last-child {
+    width: 24px;
+    height: 2px;
+  }
+}
+
+.dropdawn {
+  
+
+  &__button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+    
+      &-icon {
+        display: grid;
+        background-color: $color-primary-light;
+        width: $size-l;
+        height: $size-l;
+        border-radius: $radius-S;
+        padding: 14px;
+        justify-content: center;
+        align-items: center;
+      }
+    
+    span {
+      border-right: 1.5px solid $color-primary;
+      border-top: 1.5px solid $color-primary;
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      transform: rotate(-45deg);
+  transition: all 0.5s ease;
+
+
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: $size-xxs;
+    max-height: 0;
+    height: auto;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    padding: 0 $size-s;
+
+
+   
+
+  }
+
+  &__item {
+    padding: $size-xs 0;
+    &:hover {
+      text-decoration: 1px underline $color-primary;
+    }
+  }
+
+   &--active {
+  .dropdawn__list {
+    padding: $size-xs $size-s;
+
+  max-height: 100vh;
+}
+
+.dropdawn__button-icon span {
+  transform: rotate(135deg)
+}
+    }
+}
+
+.header__container {
+  &.active {
+    .menu-nav span {
+      transform: translateY(9px) rotate(45deg);
+
+      &:last-child {
+        width: 32px;
+        transform: translateY(0) rotate(-45deg);
+      }
+    }
+
+    .nav {
+      list-style: none;
+
+      height: auto;
+      max-height: 100vh;
+      padding: $size-xs $size-s;
+    }
+  }
+}
+
+
+
+@media (min-width: 768px) {
+  .header {
+    height: 80px;
+    padding: $size-s;
+  }
+.nav {
+    max-height: 100vh;
+          height: auto;
+  background-color: transparent;
+  position:static;
+  width: auto;
+  overflow: visible;
+  transform: none;
+
+    &__list {
+      flex-direction: row;
+      gap: $size-l;
+        align-items: center;
+
+    }
+
+}
+
+.dropdawn {
+  position: relative;
+  width: min-content;
+  &__button {
+            align-items: center;
+
+    justify-content: normal;
+    &-icon {
+      background-color: transparent;
+    }
+  }
+
+  &__list {
+    position: absolute;
+     left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+    background-color: $color-white;
+    border-radius: $radius-S;
+  }
+}
+  .logo {
+    gap: 10px;
+
+    &-img {
+      width: 48px;
+      height: 48px;
+    }
+
+    &-text {
+      width: 100px;
+      height: $size-m;
+    }
+  }
+  .menu-nav {
+    display: none;
+  }
+
+
+  
+}
+
+@media (min-width: 1440px) {}

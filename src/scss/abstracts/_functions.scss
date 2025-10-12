@@ -1,0 +1,10 @@
+@use "sass:map";
+@use "./variables" as *;
+
+@function space($size, $screen: desktop) {
+  @if $screen == desktop {
+    @return map.get($spacing-desktop, $size);
+  } @else if $screen == mobile {
+    @return map.get($spacing-mobile, $size);
+  }
+}

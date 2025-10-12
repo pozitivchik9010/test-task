@@ -1,0 +1,142 @@
+@use "../abstracts/variables" as *;
+
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: $size-s;
+    background: linear-gradient(344.89deg, #F7F1F3 22.44%, #E6EFFE 89.37%);
+    border-radius: $radius-L;
+    padding: $size-m $size-s;
+
+ 
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: $size-s;
+        max-width: 750px;
+        width: 100%;
+            margin: 0 auto;
+
+
+    }
+
+    &__title {
+        color: $color-primary-dark;
+        font-size: $size-l;
+        font-weight: 600;
+        margin: 0 -2px;
+        line-height: 100%;
+
+        &--accent {
+            color: $color-primary
+        }
+    }
+
+    &__text-container {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2; 
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        max-height: 90px;
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 148%;
+
+
+        &.show {
+            max-height: 500px;  
+            -webkit-line-clamp: unset;  
+        }
+
+
+    }
+
+
+    &__btn {
+        color: $color-primary;
+        font-weight: 510;
+        font-size: 16px;
+    }
+
+       &__meta{
+            display: flex;
+            flex-direction: row;
+            gap: $size-s;
+
+           
+    }
+
+
+  
+&__author {
+    color: $color-primary;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 1%;
+
+}
+
+  &__image {
+        width: 140px;
+        height: 150px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1170px) {
+    .hero {
+        gap: $column-desktop;
+        padding: $size-xl-desktop $size-xxl-desktop;
+        flex-direction: row;
+            align-items: center;
+
+        &__title {
+            font-size: $size-xl-desktop;
+            font-weight: 590;
+
+            &--accent {
+                color: $color-primary-dark
+            }
+        }
+
+        &__description {
+            display: flex;
+            flex-direction: column;
+            gap: $column;
+        }
+
+         &__text-container {
+            max-width: 784px;
+            -webkit-line-clamp: unset;  
+letter-spacing: 0.01em;
+             font-size: 16px;
+            font-weight: 400;
+            line-height: 140%;
+        
+        display: flex;
+        flex-direction: column;
+        gap: $size-s;
+        -webkit-box-orient:unset;
+        max-height: max-content;
+
+
+    }
+
+
+    &__btn {
+        display: none;
+    }
+         &__meta {
+            display: none;
+         }
+
+        &__image {
+            width: 381px;
+            height: 406px;
+        }
+
+    }
+}

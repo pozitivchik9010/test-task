@@ -1,0 +1,38 @@
+$size-xxl-desktop: 128px;
+$size-xl-desktop: 64px;
+
+$size-xxl: 96px;
+$size-xl: 48px;
+$size-l: 32px;
+$size-m: 24px;
+$size-s: 16px;
+$size-xs: 8px;
+$size-xxs: 4px;
+
+$radius-L: 24px;
+$radius-S: 8px;
+
+$column: 8px;
+$column-desktop: 20px;
+$transition:  all 0.5s ease;
+
+
+$color-primary: #3235E7;
+$color-primary-light: #EAF6FF;
+$color-primary-dark: #020220;
+$color-gray: #525252;
+$color-white: #FAFAFF;
+$color-yellow: #FFFF00;
+$color-red: #B00003;
+$color-blue-light: linear-gradient(96.9deg, #FFFFFF 15%, #AEDCFF 100%);
+ 
+
+@media (min-width: 768px) {
+ 
+   
+    $size-xxl: 128px;
+    $size-xl: 64px;
+     
+    $size-column: 20px;
+   
+}

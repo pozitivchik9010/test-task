@@ -1,0 +1,291 @@
+@use "./abstracts/variables" as *;
+@use "./abstracts/fonts" as *;
+@use "./abstracts/functions" as *;
+@use "./blocks/header" as *;
+@use "./blocks/footer" as *;
+@use "./blocks/hero" as *;
+@use "./blocks/hosting-analysis" as *;
+@use "./blocks/divider" as *;
+
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'SF Pro Display', "Segoe UI", "Inter", Roboto, Arial, sans-serif;
+  
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: $size-xl;
+  padding-bottom: $size-xxl;
+
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+  // padding: 0 20px;
+
+
+
+}
+
+.section {
+  &__container {
+    @extend .container;
+
+     max-width: 784px;
+      width: 100%;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 148%;
+    letter-spacing: 0.01em;
+
+    padding: 0 $size-s;
+    display: flex;
+    flex-direction: column;
+    gap: $size-m;
+    color: $color-primary-dark;
+
+  }
+
+  &__title {
+    font-weight: 590;
+    letter-spacing: -0.01em;
+    font-size: 26px;
+    letter-spacing: 0;
+    line-height: 100%;
+}
+
+&__subtitle {
+      font-size: 16px;
+
+    }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: $size-xs;
+  }
+}
+.card {
+   background-color: $color-white;
+    box-shadow: 0px 0px 16px 0px rgba(50, 53, 231, 0.1);
+    display: grid;
+    border-radius: $radius-L;
+    
+}
+.grid {
+  display: grid;
+  gap: $column
+}
+
+.flex {
+  display: flex;
+  gap: $column
+}
+
+.link {
+    color: $color-primary;
+    padding-block: $column;
+    line-height: 100%;
+    display: block;
+    font-weight: 510;
+  }
+
+.btn {
+        display: flex;
+        justify-content: center;
+        gap: $column;
+        text-align: center;
+        border-radius: 12px;
+        text-decoration: none;
+        padding: $size-s 28px;
+        font-size: $size-s;
+        font-weight: 590;
+        line-height: 100%;
+          &--primary {
+            background-color: $color-primary;
+            color: $color-white;
+ transition: all 0.25s ease;
+            &:hover {
+                background: #202294;
+  box-shadow: 0 6px 14px rgba(59, 47, 247, 0.4);
+  transform: translateY(-2px);
+            }
+
+            &:focus {
+                outline: 3px solid $color-primary-dark;
+            }
+
+           
+  }
+
+  
+}
+
+.icon {
+width: 18px;
+height: 18px;
+  }
+
+  button {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+  .arrow {
+    color: $color-primary-dark;
+      transition: transform 0.2s ease;
+
+  }
+
+
+  .open .arrow {
+  transform: rotate(180deg);
+  }
+
+
+@media (min-width: 768px) {
+
+  .icon {
+width: 24px;
+height: 24px;
+  }
+
+
+  .btn {
+    font-size: $size-m;
+
+        gap: 16px;
+  }
+
+  .main {
+    gap: $size-xl-desktop;
+  }
+
+  .section {
+    &__container {
+      padding: 0;
+      max-width: 784px;
+      width: 100%;
+      font-style: 'Regular';
+      font-size: 17px;
+
+    }
+
+    &__title {
+      font-style: 'Semibold';
+      font-size: 40px;
+      line-height: 108%;
+    }
+    &__subtitle {
+      font-size: 16px;
+
+    }
+  }
+
+}
+
+h1, h2, h3 {
+color: $color-primary-dark;
+font-weight: 590;
+line-height: 100%;
+letter-spacing: 0;
+}
+
+h1 {
+font-size: 32px;
+}
+h2 {
+  font-size: 26px;
+}
+h3 {
+  font-size: 20px;
+}
+
+p {
+  color: $color-primary-dark;
+font-weight: 400;
+font-size: 14px;
+line-height: 148%;
+letter-spacing: 0.01em;
+
+}
+
+
+@media (min-width: 768px) {
+  
+ 
+h1 {
+font-size: 64px;
+}
+h2 {
+  font-size: 40px;
+}
+h3 {
+  font-size: 32px;
+}
+
+p {
+font-size: 16px;
+line-height: 140%;
+
+}
+}
+
+.toggle {
+
+  
+  
+   &__item {
+
+     display: -webkit-box;
+     -webkit-box-orient: vertical;
+     -webkit-line-clamp: 2; 
+     overflow: hidden;
+     transition: max-height 0.4s ease;
+     max-height: 90px;
+     
+     font-size: 15px;
+    }
+ 
+
+   &.open {
+    .toggle__item {
+      max-height: 500px;  
+      -webkit-line-clamp: unset; 
+    }
+   }
+}
+
+.nav__link,  footer a {
+  opacity: 1;
+   transition: all 0.25s ease;
+   &:hover, footer a:hover {
+opacity: 0.7;
+   } 
+}
+
