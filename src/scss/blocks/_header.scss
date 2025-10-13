@@ -55,7 +55,7 @@
     gap: $size-s;
   }
 
-  &__link, .dropdawn__item a {
+  &__link, .dropdown__item a {
     color: #3235e7;
     text-decoration: none;
     font-weight: 500;
@@ -84,10 +84,11 @@
   }
 }
 
-.dropdawn {
+.dropdown {
   
 
   &__button {
+        width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -95,27 +96,18 @@
 
     
       &-icon {
+        color:$color-primary;
         display: grid;
         background-color: $color-primary-light;
         width: $size-l;
         height: $size-l;
         border-radius: $radius-S;
-        padding: 14px;
+        padding: $size-xs;
         justify-content: center;
         align-items: center;
       }
     
-    span {
-      border-right: 1.5px solid $color-primary;
-      border-top: 1.5px solid $color-primary;
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      transform: rotate(-45deg);
-  transition: all 0.5s ease;
-
-
-    }
+     
   }
 
   &__list {
@@ -141,14 +133,14 @@
     }
   }
 
-   &--active {
-  .dropdawn__list {
+   &.open {
+  .dropdown__list {
     padding: $size-xs $size-s;
 
   max-height: 100vh;
 }
 
-.dropdawn__button-icon span {
+.dropdown__button-icon span {
   transform: rotate(135deg)
 }
     }
@@ -200,7 +192,7 @@
 
 }
 
-.dropdawn {
+.dropdown {
   position: relative;
   width: min-content;
   &__button {
@@ -209,6 +201,11 @@
     justify-content: normal;
     &-icon {
       background-color: transparent;
+              
+        & .icon  {
+width: 16px;
+        height: 16px;
+        }
     }
   }
 
@@ -241,5 +238,4 @@
 
   
 }
-
-@media (min-width: 1440px) {}
+ 

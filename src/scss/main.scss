@@ -111,6 +111,7 @@ html {
 
 .btn {
         display: flex;
+        align-items: center;
         justify-content: center;
         gap: $column;
         text-align: center;
@@ -160,6 +161,10 @@ height: 18px;
     color: $color-primary-dark;
       transition: transform 0.2s ease;
 
+
+      &--primary {
+        color: $color-primary;
+      }
   }
 
 
@@ -269,7 +274,6 @@ line-height: 140%;
      transition: max-height 0.4s ease;
      max-height: 90px;
      
-     font-size: 15px;
     }
  
 
