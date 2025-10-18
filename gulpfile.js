@@ -81,6 +81,8 @@ gulp.task('server', function(){
         .pipe(server(serverSetting))
 });
 
+
+
 gulp.task('clean', function(done){
     if (fs.existsSync('./dist/')) {
 
@@ -106,3 +108,5 @@ gulp.task('default', gulp.series(
     gulp.parallel('server', 'watch')
 
 ));
+
+gulp.task('build', gulp.series('clean', 'html', 'scss', 'images', 'fonts', 'js'));
